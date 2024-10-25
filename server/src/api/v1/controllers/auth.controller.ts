@@ -8,7 +8,7 @@ import {
   AuthRegisterBody,
   AuthRegisterResponse,
 } from "../types/types";
-import { UserModel } from "../models/user.model";
+import { UserModel } from "../../../models/user.model";
 import { generateAccessToken, generateRefreshToken } from "../../../utils/token-generater.util";
 import jwt from "jsonwebtoken";
 
