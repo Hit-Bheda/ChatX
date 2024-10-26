@@ -19,7 +19,7 @@ export async function register(
   next:NextFunction
 ): Promise<ControllerMethodReturn> {
     // Destructured The Request body
-    const { username, password, email } = req.body;
+    const { name,username, password, email } = req.body;
 
     // Validating Email , Password And Username
     if (!email || !valid.isEmail(email)) throw new Error("Invalid Email!,Please Provide Valid Email!")
@@ -34,6 +34,7 @@ export async function register(
 
     // If User Doesn't Exist Then Cretae The User.
     const data = await UserModel.create({
+      name,
       username,
       email,
       password: await bcrypt.hash(password,10),

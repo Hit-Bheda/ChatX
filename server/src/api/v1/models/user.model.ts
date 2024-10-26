@@ -2,6 +2,10 @@ import { getModelForClass, modelOptions, pre, prop } from "@typegoose/typegoose"
 
 @modelOptions({ schemaOptions: { timestamps: true, },options: {allowMixed:0} })
 export class UserSchema {
+
+    @prop({required: true})
+    public name!: string;
+
     @prop({ required: true, unique: true })
     public username!: string;
 

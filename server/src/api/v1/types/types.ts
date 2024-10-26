@@ -29,24 +29,17 @@ export type AuthLoginResponse =
     };
 export interface UserType {
   _id: string;
+  name:string;
   username: string;
   email: string;
   password: string;
 }
 
-export interface UserTypeWithoutId extends Omit<UserType, "_id"> {}
 
 export interface Route {
   path: string;
   method: "get" | "post" | "put" | "delete";
   handler: RequestHandler;
-}
-
-export interface UserType {
-  _id: string;
-  username: string;
-  email: string;
-  password: string;
 }
 
 export interface UserTypeWithoutId extends Omit<UserType, "_id"> {}
